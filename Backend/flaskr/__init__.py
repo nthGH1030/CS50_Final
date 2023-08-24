@@ -42,4 +42,8 @@ def create_app(test_config=None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index')
 
+    #import solver
+    from . import solver
+    app.register_blueprint(solver.bp)
+
     return app

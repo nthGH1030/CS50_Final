@@ -1,12 +1,21 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, flash, g, redirect, render_template, request, url_for, Flask
 )
+
 from werkzeug.exceptions import abort
 
 from flaskr.auth import login_required
 from flaskr.db import get_db
 
+import datetime
+ 
+x = datetime.datetime.now()
+
 bp = Blueprint('blog', __name__)
+
+
+app = Flask(__name__)
+
 
 @bp.route('/')
 def index():
